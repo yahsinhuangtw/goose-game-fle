@@ -2,29 +2,34 @@
 <html>
 
 <head>
-    <style>
-    table, th, td {
+  <script src="scripts/goose-game-fle.js"></script>
+  <style>
+    table,
+    th,
+    td {
       border: 1px solid grey;
     }
-    </style>
-    </head>
+  </style>
+</head>
 
-  <title>Le jeu de l'oie (The Game of Goose)</title>
-  <h1>Le jeu de l'oie (The Game of Goose)</h1>
+<title>Le jeu de l'oie (The Game of Goose)</title>
+<h1>Le jeu de l'oie (The Game of Goose)</h1>
+
 <body>
-<p>Aim of the game: To be the first to get to square 23.</p>
-<p>End of the game: The first player to get to square 23 wins the game.</p>
-<p>The players roll the dice and move their piece forward the number of spaces, according to the dice total.</p>
-<p>Le jeu de l'oie est parfait pour stimuler la mémorisation du vocabulaire en classe de français langue étrangère.</p>
+  <p>Aim of the game: To be the first to get to square 23.</p>
+  <p>End of the game: The first player to get to square 23 wins the game.</p>
+  <p>The players roll the dice and move their piece forward the number of spaces, according to the dice total.</p>
+  <p>Le jeu de l'oie est parfait pour stimuler la mémorisation du vocabulaire en classe de français langue étrangère.
+  </p>
 
-<table style="width:40%">
-    <tr> 
+  <table style="width:40%">
+    <tr>
       <td>0 Départ</td>
       <td>1</td>
       <td>2</td>
       <td>3</td>
     </tr>
-    <tr> 
+    <tr>
       <td>4</td>
       <td>5</td>
       <td>6</td>
@@ -37,23 +42,23 @@
       <td>11</td>
     </tr>
     <tr>
-        <td>12</td>
-        <td>13</td>
-        <td>14</td>
-        <td>15</td>
-      </tr>
-      <tr>
-        <td>16</td>
-        <td>17</td>
-        <td>18</td>
-        <td>19</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>21</td>
-        <td>22</td>
-        <td>23 Arrivée</td>
-      </tr>
+      <td>12</td>
+      <td>13</td>
+      <td>14</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>17</td>
+      <td>18</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>21</td>
+      <td>22</td>
+      <td>23 Arrivée</td>
+    </tr>
   </table>
 
   <p></p>
@@ -62,18 +67,19 @@
   <p></p>
   <p></p>
 
-<h3>Cliquez sur le bouton "Lancer" pour commencer à jouer.</h3>
-<button id="lancerB">Lancer</button> 
+  <h3>Cliquez sur le bouton "Lancer" pour commencer à jouer.</h3>
+  <button id="lancerB">Lancer</button>
 
-<p></p>
-<p></p>
-<p></p>
+  <p></p>
+  <p></p>
+  <p></p>
 
-<form>
+  <form>
     <label for="total">Résultat:</label>
     <input type="total" id="total" name="total" placeholder="e.g. 6" />
     <button type="submit">C'est parti</button>
   </form>
 
 </body>
+
 </html>

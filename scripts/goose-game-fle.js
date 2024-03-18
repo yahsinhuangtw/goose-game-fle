@@ -3,8 +3,10 @@
 Math.floor(Math.random() * 6);
 
 function lancer() {
-    Math.floor(Math.random() * 6);
-  };
+    
+  return Math.floor(Math.random() * 6);
+  
+};
   
   let result = lancer();
   console.log(result); 
