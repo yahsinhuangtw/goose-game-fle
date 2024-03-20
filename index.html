@@ -1,8 +1,8 @@
 <!DOCTYPE html>
+<html lang="en">
 <html>
 
 <head>
-  <script src="scripts/goose-game-fle.js"></script>
   <style>
     table,
     th,
@@ -11,16 +11,12 @@
     }
   </style>
 </head>
-
-<title>Le jeu de l'oie (The Game of Goose)</title>
+<title>Le jeu de l'oie</title>
 <h1>Le jeu de l'oie (The Game of Goose)</h1>
 
 <body>
-  <p>Aim of the game: To be the first to get to square 23.</p>
-  <p>End of the game: The first player to get to square 23 wins the game.</p>
-  <p>The players roll the dice and move their piece forward the number of spaces, according to the dice total.</p>
-  <p>Le jeu de l'oie est parfait pour stimuler la mémorisation du vocabulaire en classe de français langue étrangère.
-  </p>
+  <p>Lancez le dé, avancez votre pion du nombre de cases indiquées et lisez sur quoi vous êtes tombés. </p>
+  <p>Pour gagner, il faut être le premier à arriver sur la dernière case 23. </p>
 
   <table style="width:40%">
     <tr>
@@ -67,19 +63,18 @@
   <p></p>
   <p></p>
 
-  <h3>Cliquez sur le bouton "Lancer" pour commencer à jouer.</h3>
-  <button id="lancerB">Lancer</button>
+  <h3>Cliquez sur le bouton "Lancer".</h3>
+  <button id="lancerB" onclick="lancer()">Lancer</button>
 
-  <p></p>
-  <p></p>
   <p></p>
 
   <form>
     <label for="total">Résultat:</label>
-    <input type="total" id="total" name="total" placeholder="e.g. 6" />
+    <input type="total" id="total" name="total" placeholder="e.g. 6">
     <button type="submit">C'est parti</button>
   </form>
 
 </body>
+<script src="scripts/goose-game-fle.js"></script>
 
 </html>
