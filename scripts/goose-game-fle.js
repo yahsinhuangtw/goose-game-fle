@@ -10,4 +10,9 @@ function lancer() {
 let total = lancer();
 console.log(total);
 
-document.getElementById("lancerB").onclick = function () { lancer() };
+document.getElementById("lancerB").onclick = function () {
+  let total = lancer();
+  console.log("Answer: ", total);
+  let inputElement = document.getElementById("total");
+  inputElement.value = total;
+};
