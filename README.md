@@ -7,12 +7,14 @@ Le jeu de l'oie est parfait pour stimuler la mémorisation du vocabulaire en cla
 
 ## A JavaScript program to implement simplified version of Game of the Goose
 
-### The Three States of the Game
-#### Game initialization
-Two players, Beagle and Goldie, play against each other on the same computer. The players each roll the dice by clicking “Lancer” button, and the person who rolls the highest becomes the first player.
+Two players, Beagle and Goldie, play against each other on the same computer.
+
+### The Two States of the Game
 
 #### Game loop
-The player rolls a dice to start playing. The player moves the piece according to the dice value rolled. The first player to reach the 23rd space wins; the program proceeds to the game over state.
+Player Beagle always go first. 
+
+Player rolls a dice to start the game. The player moves the piece according to the dice value rolled. The first player to reach the 23rd space wins; the program proceeds to the game over state.
 
 #### Game over
 Display the winner; players could decide to restart the game or not.
@@ -32,5 +34,10 @@ Player clicks "C'est parti" button, the new position of the player's piece becom
 
 If the new position is equal to or greater than space 23, the program enters the game over state.
 
-#### Display the winning player
-The function displayWinner() is designed to display an overlay with a winning message such as “The Beagle has won.” / “The Goldie has won.”. Display "Restart" button. Hide “Lancer” button. Hide "C'est parti" button. Hide "Résultat" form.
+#### Enter game over state
+The program enters the game over state. Display "Restart" button. Hide “Lancer” button. Hide "C'est parti" button. Hide "Résultat" form. 
+
+The function gameReset() is designed to display an overlay with a winning message such as “The Beagle has won.” / “The Goldie has won.”. 
+
+#### Game reset
+The two pieces reset to the position zero. Hide "Restart" button. Display "Lancer" button. Display "C'est parti" button. Display "Résultat" form.
