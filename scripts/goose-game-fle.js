@@ -27,3 +27,16 @@ document.getElementById("lancerB").onclick = function () {
   let inputElement = document.getElementById("total");
   inputElement.value = total;
 };
+
+document.getElementById("parti").onclick = function () {
+  let diceTotal = document.getElementById("total").value;
+      diceTotal = parseInt(diceTotal);
+  if (gameState['Turn'] === 'playerBeagle') {
+    newPosition = gameState.beaglePosition + diceTotal;
+    gameState.beaglePosition = newPosition;
+  } else {
+    newPosition = gameState.goldiePosition + diceTotal;
+    gameState.goldiePosition = newPosition;
+  }
+  console.log("Tell us the state of the game: ", gameState);
+};
