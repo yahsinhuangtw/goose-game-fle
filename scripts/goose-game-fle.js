@@ -1,3 +1,14 @@
+let gameState = {
+  'State' : 'Game Loop',
+  'Turn' : true,
+  playerPosition : 'positionIndex', 
+  diceTotal: 5
+ };
+
+let stateV =  gameState['State'];
+
+console.log(gameState[stateV]);
+
 // On lance le dé. Returns a random integer from 1 to 6.
 Math.floor(Math.random() * 6);
 
