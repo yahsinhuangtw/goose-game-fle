@@ -28,6 +28,7 @@ document.getElementById("lancerB").onclick = function () {
   inputElement.value = total;
 };
 
+// After clicking c'est parti button, beaglePosition value adds diceTotal value, reassigns it to the newPosition. 
 document.getElementById("parti").onclick = function () {
   let diceTotal = document.getElementById("total").value;
       diceTotal = parseInt(diceTotal);
@@ -40,3 +41,7 @@ document.getElementById("parti").onclick = function () {
   }
   console.log("Tell us the state of the game: ", gameState);
 };
+
+// Has anyone won? If beaglePosition or goldiePosition is greater than or equal to position 23, beagle or goldie has won; gameState enters gameover state. If not, game continues, gameState enters gameLoop state.
+
+// Whose turn is it? if Turn equals to playerBeagle is True, update Turn to goldie, if Turn equals to playerBeagle is False, update Turn to beagle.
