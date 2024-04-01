@@ -1,6 +1,6 @@
 let gameState = {
   'State' : 'Game Loop',
-  'Turn' : 'playerBeagle',
+  'Turn' : 'playerGoldie',
   beaglePosition : 0,
   goldiePosition : 0,
  };
@@ -52,3 +52,9 @@ if (gameState.beaglePosition >= 23) {
 }
 
 // Whose turn is it? if Turn equals to playerBeagle is True, update Turn to goldie, if Turn equals to playerBeagle is False, update Turn to beagle.
+
+if (gameState.Turn === "playerBeagle") {
+  console.log("Update gameState.Turn to playerGoldie.");
+} else {
+  console.log("Update gameState.Turn to playerBeagle.");
+}
