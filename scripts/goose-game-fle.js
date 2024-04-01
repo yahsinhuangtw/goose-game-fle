@@ -43,5 +43,12 @@ document.getElementById("parti").onclick = function () {
 };
 
 // Has anyone won? If beaglePosition or goldiePosition is greater than or equal to position 23, beagle or goldie has won; gameState enters gameover state. If not, game continues, gameState enters gameLoop state.
+if (gameState.beaglePosition >= 23) {
+  console.log("Beagle has won. gameState enters gameover state.");
+} else if (gameState.goldiePosition >= 23){
+  console.log("Goldie has won. gameState enters gameover state.")
+} else {
+  console.log("No one has won. gameState enters gameloop state.")
+}
 
 // Whose turn is it? if Turn equals to playerBeagle is True, update Turn to goldie, if Turn equals to playerBeagle is False, update Turn to beagle.
