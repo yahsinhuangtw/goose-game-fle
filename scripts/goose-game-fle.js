@@ -62,10 +62,12 @@ document.getElementById("parti").onclick = function () {
 /* write enterGameOver(){} function including hide lancerB, hide partiB, show restartB, hide "Résultat" form, display winner.
 use div tag and id to put all of the game loop related ui elements such as button tags into one big div.
 <div id="gameover"> ... </div>
-function enterGameOver() {
-  document.getElementById("gameover").style.visibility = "hidden"; //Cannot read properties of null (reading 'style')
-}
 */
+function enterGameOver() {
+  document.querySelectorAll(".gameover").forEach(function(elem){
+    elem.style.visibility = "hidden";
+  });
+}
 
 /* write enterGameLoop(){} function including show lancerB, show partiB, show restartB, show "Résultat" form.
 use div tag and id to put all of the game over related ui elements into one big div.
