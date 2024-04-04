@@ -3,6 +3,7 @@ let gameState = {
   'Turn': 'playerBeagle',
   beaglePosition: 0,
   goldiePosition: 0,
+  'Winner': '___',
 };
 
 let stateV = gameState['State'];
@@ -42,9 +43,15 @@ document.getElementById("parti").onclick = function () {
   console.log("Tell us the state of the game: ", gameState);
   // Has anyone won? If beaglePosition or goldiePosition is greater than or equal to position 23, beagle or goldie has won; gameState enters gameover state. If not, game continues, gameState enters gameLoop state.
   if (gameState.beaglePosition >= 23) {
+    gameState.Winner = "Beagle";
+    enterGameOver();
     console.log("Beagle has won. gameState enters gameover state.");
+    return
   } else if (gameState.goldiePosition >= 23) {
+    gameState.Winner = "Goldie";
+    enterGameOver();
     console.log("Goldie has won. gameState enters gameover state.")
+    return
   } else {
     console.log("No one has won. gameState enters gameloop state.")
   }
@@ -63,11 +70,25 @@ document.getElementById("parti").onclick = function () {
 <div id="gameover"> ... </div>
 */
 function enterGameOver() {
-  document.querySelectorAll(".gameover").forEach(function(elem){
+  document.getElementById("winnerName").innerText = `${gameState.Winner} has won.`;
+  document.querySelectorAll(".groupA").forEach(function(elem){
     elem.style.visibility = "hidden";
+  });
+  document.querySelectorAll(".groupB").forEach(function(elem){
+    elem.style.visibility = "visible";
   });
 }
 /* write enterGameLoop(){} function including show lancerB, show partiB, show restartB, show "Résultat" form.
 <div id="gameloop"> ... </div>
 document.querySelectorAll(".gameloop").forEach
 */
+function enterGameLoop() {
+  document.querySelectorAll(".groupB").forEach(function(elem){
+    elem.style.visibility = "hidden";
+  });
+  document.querySelectorAll(".groupA").forEach(function(elem){
+    elem.style.visibility = "visible";
+  });
+}
+
+enterGameLoop(); // When the page loads, we set up the game.
