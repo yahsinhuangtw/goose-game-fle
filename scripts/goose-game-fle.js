@@ -59,8 +59,7 @@ document.getElementById("parti").onclick = function () {
     gameState.Turn = 'playerBeagle';
   }
 };
-/* write enterGameOver(){} function including hide lancerB, hide partiB, show restartB, hide "Résultat" form, display winner.
-use div tag and id to put all of the game loop related ui elements such as button tags into one big div.
+/* enterGameOver(){} function: hide lancerB, hide partiB, hide "Résultat" form; show restartB, show winner name text.
 <div id="gameover"> ... </div>
 */
 function enterGameOver() {
@@ -68,9 +67,7 @@ function enterGameOver() {
     elem.style.visibility = "hidden";
   });
 }
-
 /* write enterGameLoop(){} function including show lancerB, show partiB, show restartB, show "Résultat" form.
-use div tag and id to put all of the game over related ui elements into one big div.
 <div id="gameloop"> ... </div>
-document.getElementById("gameloop")
+document.querySelectorAll(".gameloop").forEach
 */

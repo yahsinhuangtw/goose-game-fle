@@ -56,29 +56,26 @@
       <td id="23">23 Arrivée</td>
     </tr>
   </table>
+  <p></p>
 
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
   <div class="gameover">
-    <h3 onclick="enterGameOver()">Cliquez sur le bouton "Lancer".</h3>
+    <button id="lancerB" onclick="lancer()" ; onclick="enterGameOver()">Lancer</button>
   </div>
-  <button id="lancerB" onclick="lancer()">Lancer</button>
-  <p></p>
 
-  <form>
-    <label for="total">Résultat:</label>
-    <input type="total" id="total" name="total" placeholder="e.g. 6">
+  <div class="gameover">
+    <form>
+      <label for="total" onclick="enterGameOver()">Résultat:</label>
+      <input type="total" id="total" name="total" placeholder="e.g. 6">
+    </form>
+  </div>
 
-  </form>
-
-  <button id="parti">C'est parti</button>
+  <div class="gameover">
+    <button id="parti" onclick="enterGameOver()">C'est parti</button>
+  </div>
 
   <p></p>
   <div class="gameover">
-  <button id="restartB">Restart</button>
+    <button id="restartB">Restart</button>
   </div>
 </body>
 <script src="scripts/goose-game-fle.js"></script>
