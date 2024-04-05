@@ -61,9 +61,11 @@ document.getElementById("parti").onclick = function () {
   if (gameState.Turn === "playerBeagle") {
     console.log("Update gameState.Turn to playerGoldie.");
     gameState.Turn = 'playerGoldie';
+    document.getElementById("turnP").innerText = `${gameState.Turn} is your turn.`;
   } else {
     console.log("Update gameState.Turn to playerBeagle.");
     gameState.Turn = 'playerBeagle';
+    document.getElementById("turnP").innerText = `${gameState.Turn} is your turn.`;
   }
 };
 /* enterGameOver(){} function: hide lancerB, hide partiB, hide "Résultat" form; show restartB, show winner name text.
@@ -92,3 +94,10 @@ function enterGameLoop() {
 }
 
 enterGameLoop(); // When the page loads, we set up the game.
+
+document.getElementById("restartB").onclick = function restart(){
+  gameState.beaglePosition = 0;
+  gameState.goldiePosition = 0;
+  document.getElementById("total").value = 0;
+  enterGameLoop();
+}
