@@ -37,10 +37,13 @@ document.getElementById("parti").onclick = function () {
     let oldPosition = gameState.beaglePosition;
     let newPosition = gameState.beaglePosition + diceTotal;
     gameState.beaglePosition = newPosition;
-    document.getElementById(oldPosition).innerText = `${oldPosition} (${gameState.Turn})`;
+    document.getElementById(oldPosition).innerText = `${oldPosition}`;
+    document.getElementById(newPosition).innerText = `${newPosition} (${gameState.Turn})`;
   } else {
-    newPosition = gameState.goldiePosition + diceTotal;
+    let oldPosition = gameState.goldiePosition;
+    let newPosition = gameState.goldiePosition + diceTotal;
     gameState.goldiePosition = newPosition;
+    document.getElementById(oldPosition).innerText = `${oldPosition}`;
     document.getElementById(newPosition).innerText = `${newPosition} (${gameState.Turn})`;
   }
   console.log("Tell us the state of the game: ", gameState);
