@@ -37,10 +37,11 @@ document.getElementById("parti").onclick = function () {
     let oldPosition = gameState.beaglePosition;
     let newPosition = gameState.beaglePosition + diceTotal;
     gameState.beaglePosition = newPosition;
-    //document.getElementById(oldPosition){}.innerText
+    document.getElementById(oldPosition).innerText = `${oldPosition} (${gameState.Turn})`;
   } else {
     newPosition = gameState.goldiePosition + diceTotal;
     gameState.goldiePosition = newPosition;
+    document.getElementById(newPosition).innerText = `${newPosition} (${gameState.Turn})`;
   }
   console.log("Tell us the state of the game: ", gameState);
   // Has anyone won? If beaglePosition or goldiePosition is greater than or equal to position 23, beagle or goldie has won; gameState enters gameover state. If not, game continues, gameState enters gameLoop state.
