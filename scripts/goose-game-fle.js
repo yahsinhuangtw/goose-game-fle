@@ -29,23 +29,31 @@ document.getElementById("lancerB").onclick = function () {
   inputElement.value = total;
 };
 
+function drawBoard() {
+  for (let i = 0; i < 24; i++) {
+    let beagleString = "";
+    let goldieString = "";
+    let specialName = "";
+    if (gameState.beaglePosition === i) { beagleString = "(Beagle)" };
+    if (gameState.goldiePosition === i) { goldieString = "(Goldie)" };
+    if (i === 0) { specialName = "Départ" };
+    if (i === 23) { specialName = "Arrivée" };
+    document.getElementById(i).innerText = `${i} ${specialName} ${beagleString} ${goldieString}`
+  }
+}
 // After clicking c'est parti button, beaglePosition value adds diceTotal value, reassigns it to the newPosition. 
 document.getElementById("parti").onclick = function () {
   let diceTotal = document.getElementById("total").value;
   diceTotal = parseInt(diceTotal);
   if (gameState['Turn'] === 'Beagle') {
-    let oldPosition = gameState.beaglePosition;
     let newPosition = gameState.beaglePosition + diceTotal;
     gameState.beaglePosition = newPosition;
-    document.getElementById(oldPosition).innerText = `${oldPosition}`;
-    document.getElementById(newPosition).innerText = `${newPosition} (${gameState.Turn})`;
   } else {
-    let oldPosition = gameState.goldiePosition;
     let newPosition = gameState.goldiePosition + diceTotal;
     gameState.goldiePosition = newPosition;
-    document.getElementById(oldPosition).innerText = `${oldPosition}`;
-    document.getElementById(newPosition).innerText = `${newPosition} (${gameState.Turn})`;
   }
+  drawBoard();
+
   console.log("Tell us the state of the game: ", gameState);
   // Has anyone won? If beaglePosition or goldiePosition is greater than or equal to position 23, beagle or goldie has won; gameState enters gameover state. If not, game continues, gameState enters gameLoop state.
   if (gameState.beaglePosition >= 23) {
@@ -107,7 +115,7 @@ function restart() {
   gameState.goldiePosition = 0;
   document.getElementById("total").value = "";
   document.getElementById("turnP").innerText = `${gameState.Turn}, it's your turn.`;
-  document.getElementById("0").innerText = "0 Départ (Beagle) (Goldie)";
+  drawBoard();
   enterGameLoop();
 }
 
