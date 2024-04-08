@@ -1,6 +1,6 @@
 let gameState = {
   'State': 'Game Loop',
-  'Turn': 'playerBeagle',
+  'Turn': 'Beagle',
   beaglePosition: 0,
   goldiePosition: 0,
   'Winner': '___',
@@ -33,9 +33,11 @@ document.getElementById("lancerB").onclick = function () {
 document.getElementById("parti").onclick = function () {
   let diceTotal = document.getElementById("total").value;
   diceTotal = parseInt(diceTotal);
-  if (gameState['Turn'] === 'playerBeagle') {
-    newPosition = gameState.beaglePosition + diceTotal;
+  if (gameState['Turn'] === 'Beagle') {
+    let oldPosition = gameState.beaglePosition;
+    let newPosition = gameState.beaglePosition + diceTotal;
     gameState.beaglePosition = newPosition;
+    //document.getElementById(oldPosition){}.innerText
   } else {
     newPosition = gameState.goldiePosition + diceTotal;
     gameState.goldiePosition = newPosition;
@@ -58,14 +60,14 @@ document.getElementById("parti").onclick = function () {
 
   // Whose turn is it? if Turn equals to playerBeagle is True, update Turn to goldie, if Turn equals to playerBeagle is False, update Turn to beagle.
 
-  if (gameState.Turn === "playerBeagle") {
-    console.log("Update gameState.Turn to playerGoldie.");
-    gameState.Turn = 'playerGoldie';
+  if (gameState.Turn === "Beagle") {
+    console.log("Update gameState.Turn to Goldie.");
+    gameState.Turn = 'Goldie';
   } else {
-    console.log("Update gameState.Turn to playerBeagle.");
-    gameState.Turn = 'playerBeagle';
+    console.log("Update gameState.Turn to Beagle.");
+    gameState.Turn = 'Beagle';
   }
-  document.getElementById("turnP").innerText = `${gameState.Turn} it's your turn.`;
+  document.getElementById("turnP").innerText = `${gameState.Turn}, it's your turn.`;
 };
 /* enterGameOver(){} function: hide lancerB, hide partiB, hide "Résultat" form; show restartB, show winner name text.
 <div id="gameover"> ... </div>
@@ -100,7 +102,7 @@ function restart() {
   gameState.beaglePosition = 0;
   gameState.goldiePosition = 0;
   document.getElementById("total").value = "";
-  document.getElementById("turnP").innerText = `${gameState.Turn} it's your turn.`;
+  document.getElementById("turnP").innerText = `${gameState.Turn}, it's your turn.`;
   enterGameLoop();
 }
 
