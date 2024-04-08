@@ -103,6 +103,7 @@ function restart() {
   gameState.goldiePosition = 0;
   document.getElementById("total").value = "";
   document.getElementById("turnP").innerText = `${gameState.Turn}, it's your turn.`;
+  document.getElementById("0").innerText = "0 Départ (Beagle) (Goldie)";
   enterGameLoop();
 }
 
