@@ -6,6 +6,7 @@ let gameState = {
   'Winner': '___',
 };
 
+const NUMBEROFCELLS = 64;
 let stateV = gameState['State'];
 
 console.log("Here's the Game State: ", stateV);
@@ -30,14 +31,14 @@ document.getElementById("lancerB").onclick = function () {
 };
 
 function drawBoard() {
-  for (let i = 0; i < 24; i++) {
+  for (let i = 0; i < NUMBEROFCELLS; i++) {
     let beagleString = "";
     let goldieString = "";
     let specialName = "";
     if (gameState.beaglePosition === i) { beagleString = "(Beagle)" };
     if (gameState.goldiePosition === i) { goldieString = "(Goldie)" };
     if (i === 0) { specialName = "Départ" };
-    if (i === 23) { specialName = "Arrivée" };
+    if (i === NUMBEROFCELLS - 1) { specialName = "Arrivée" };
     document.getElementById(i).innerText = `${i} ${specialName} ${beagleString} ${goldieString}`
   }
 }
@@ -56,12 +57,12 @@ document.getElementById("parti").onclick = function () {
 
   console.log("Tell us the state of the game: ", gameState);
   // Has anyone won? If beaglePosition or goldiePosition is greater than or equal to position 23, beagle or goldie has won; gameState enters gameover state. If not, game continues, gameState enters gameLoop state.
-  if (gameState.beaglePosition >= 23) {
+  if (gameState.beaglePosition >= NUMBEROFCELLS - 1) {
     gameState.Winner = "Beagle";
     enterGameOver();
     console.log("Beagle has won. gameState enters gameover state.");
     return
-  } else if (gameState.goldiePosition >= 23) {
+  } else if (gameState.goldiePosition >= NUMBEROFCELLS - 1) {
     gameState.Winner = "Goldie";
     enterGameOver();
     console.log("Goldie has won. gameState enters gameover state.")
