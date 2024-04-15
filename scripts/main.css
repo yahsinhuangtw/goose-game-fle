@@ -1,0 +1,47 @@
+h1 {
+    color: lightcoral;
+    font-weight: bold;
+}
+p {
+    color: teal;
+}
+#blackboard {
+    height: 200px;
+    width: 440px;
+    background-color: rgba(7, 51, 13, 0.719);
+}
+
+#blackboardText {
+    color: rgb(227, 234, 239);
+}
+
+.table {
+    table-layout: fixed;
+    width: 280px;
+    border: 1px solid grey;
+}
+
+#lancerB {
+    margin:20px;
+    color: orchid;
+}
+
+#totalLabel {
+    margin:2px;
+    color:maroon;
+}
+
+#restartB {
+    margin-left:20px;
+    color:mediumseagreen;
+}
+
+#winnerName {
+    margin:10px;
+    color: palevioletred;
+}
+
+#parti {
+    margin:30px;
+    color: sienna;
+}
