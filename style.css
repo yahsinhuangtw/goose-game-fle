@@ -45,3 +45,8 @@ p {
     margin:30px;
     color: sienna;
 }
+
+.container {
+    display: flex;
+    align-items: center;
+}
