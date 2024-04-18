@@ -1,52 +1,84 @@
 h1 {
-    color: lightcoral;
+    color: teal;
     font-weight: bold;
 }
+
 p {
     color: teal;
+    font-size: 20px;
 }
+
 #blackboard {
-    height: 200px;
-    width: 440px;
-    background-color: rgba(7, 51, 13, 0.719);
+    height: 280px;
+    width: 560px;
+    background-color: rgba(0, 128, 128, 0.826);
+    margin-left: 40px;
 }
 
 #blackboardText {
     color: rgb(227, 234, 239);
+    margin: 30px;
 }
 
 .table {
     table-layout: fixed;
-    width: 280px;
-    border: 1px solid grey;
+    width: 600px;
+    border: 2px solid rgb(79, 162, 230);
+    background-color: rgba(255, 127, 80, 0.159);
 }
 
 #lancerB {
-    margin:20px;
-    color: orchid;
+    margin: 20px;
+    color: rgb(52, 148, 227);
+    font-size: 20px;
 }
 
 #totalLabel {
-    margin:2px;
-    color:maroon;
+    margin: 2px;
+    color: rgb(45, 101, 147);
+    font-size: 20px;
 }
 
 #restartB {
-    margin-left:20px;
-    color:mediumseagreen;
+    margin-left: 20px;
+    color: rgb(52, 148, 227);
+    font-size: 20px;
 }
 
 #winnerName {
-    margin:10px;
+    margin: 10px;
     color: palevioletred;
+    font-size: 20px;
 }
 
 #parti {
-    margin:30px;
-    color: sienna;
+    margin: 30px;
+    color: palevioletred;
+    font-size: 20px;
+}
+
+#turnP {
+    color: palevioletred;
+    font-size: 20px;
 }
 
 .container {
     display: flex;
     align-items: center;
+}
+
+.grid-container {
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: auto auto auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 0.3px solid rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
 }
