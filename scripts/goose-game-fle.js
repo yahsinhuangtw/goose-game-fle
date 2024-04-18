@@ -88,10 +88,10 @@ document.getElementById("parti").onclick = function () {
 function enterGameOver() {
   document.getElementById("winnerName").innerText = `${gameState.Winner} has won.`;
   document.querySelectorAll(".groupA").forEach(function (elem) {
-    elem.style.visibility = "hidden";
+    elem.style.display = "none";
   });
   document.querySelectorAll(".groupB").forEach(function (elem) {
-    elem.style.visibility = "visible";
+    elem.style.display = "block";
   });
 }
 /* write enterGameLoop(){} function including show lancerB, show partiB, show restartB, show "Résultat" form.
@@ -100,10 +100,10 @@ document.querySelectorAll(".gameloop").forEach
 */
 function enterGameLoop() {
   document.querySelectorAll(".groupB").forEach(function (elem) {
-    elem.style.visibility = "hidden";
+    elem.style.display = "none";
   });
   document.querySelectorAll(".groupA").forEach(function (elem) {
-    elem.style.visibility = "visible";
+    elem.style.display = "block";
   });
 }
 
