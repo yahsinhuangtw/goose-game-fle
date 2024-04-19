@@ -11,8 +11,6 @@ let stateV = gameState['State'];
 
 console.log("Here's the Game State: ", stateV);
 
-// On lance le dé. Returns a random integer from 1 to 6.
-Math.floor(Math.random() * 6);
 
 function lancer() {
 
@@ -20,8 +18,6 @@ function lancer() {
 
 };
 
-let total = lancer();
-console.log(total);
 
 document.getElementById("lancerB").onclick = function () {
   let total = lancer();
@@ -45,7 +41,8 @@ function drawBoard() {
 // After clicking c'est parti button, beaglePosition value adds diceTotal value, reassigns it to the newPosition. 
 document.getElementById("parti").onclick = function () {
   let diceTotal = document.getElementById("total").value;
-  diceTotal = parseInt(diceTotal);
+  diceTotal = parseInt(diceTotal); //turn strings into numbers
+  document.getElementById("total").value = "";
   if (gameState['Turn'] === 'Beagle') {
     let newPosition = gameState.beaglePosition + diceTotal;
     gameState.beaglePosition = newPosition;
