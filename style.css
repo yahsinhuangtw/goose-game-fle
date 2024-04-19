@@ -1,17 +1,18 @@
 h1 {
-    color: teal;
-    font-weight: bold;
+    color: #4e4e4e ;
+    font-family: 'Poppins';
 }
 
 p {
-    color: teal;
-    font-size: 20px;
+    color: #4e4e4e;
+    font-family: 'Poppins';
+    font-size: 16px;
 }
 
 #blackboard {
     height: 280px;
     width: 560px;
-    background-color: rgba(0, 128, 128, 0.826);
+    background-color: #81818be4;
     margin-left: 40px;
 }
 
@@ -23,42 +24,51 @@ p {
 .table {
     table-layout: fixed;
     width: 600px;
-    border: 2px solid rgb(79, 162, 230);
-    background-color: rgba(255, 127, 80, 0.159);
+    border: 2px solid rgba(100, 148, 237, 0.91);
+    background-color: #fda18545;
+    color: #4e4e4e;
+    font-family: 'Poppins';
+    font-size: 14px;
 }
 
 #lancerB {
     margin: 20px;
-    color: rgb(52, 148, 227);
+    color: #4e4e4e;
+    font-family: 'Poppins';
     font-size: 20px;
 }
 
 #totalLabel {
     margin: 2px;
-    color: rgb(45, 101, 147);
+    color: #4e4e4e;
+    font-family: 'Poppins';
     font-size: 20px;
 }
 
 #restartB {
     margin-left: 20px;
     color: rgb(52, 148, 227);
+    font-family: 'Poppins';
     font-size: 20px;
 }
 
 #winnerName {
     margin: 10px;
     color: palevioletred;
+    font-family: 'Poppins';
     font-size: 20px;
 }
 
 #parti {
     margin: 30px;
-    color: palevioletred;
+    color: #f78f6f;
+    font-family: 'Poppins';
     font-size: 20px;
 }
 
 #turnP {
-    color: palevioletred;
+    color: #81818b;
+    font-family: 'Poppins';
     font-size: 20px;
 }
 
