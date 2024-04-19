@@ -11,6 +11,7 @@ p {
     width: 560px;
     background-color: #81818be4;
     margin-left: 40px;
+    border-radius: 35px;
 }
 
 #blackboardText {
@@ -25,6 +26,7 @@ p {
     background-color: #fda18545;
     color: #4e4e4e;
     font-size: 16px;
+    border-radius: 15px;
 }
 
 #lancerB {
