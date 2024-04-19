@@ -1,12 +1,9 @@
 h1 {
-    color: #4e4e4e ;
-    font-family: 'Poppins';
+    color: #4e4e4e;
 }
 
 p {
     color: #4e4e4e;
-    font-family: 'Poppins';
-    font-size: 16px;
 }
 
 #blackboard {
@@ -27,49 +24,41 @@ p {
     border: 2px solid rgba(100, 148, 237, 0.91);
     background-color: #fda18545;
     color: #4e4e4e;
-    font-family: 'Poppins';
-    font-size: 14px;
+    font-size: 16px;
 }
 
 #lancerB {
-    margin: 20px;
+    margin: 16px;
     color: #4e4e4e;
     font-family: 'Poppins';
-    font-size: 20px;
 }
 
 #totalLabel {
     margin: 2px;
     color: #4e4e4e;
-    font-family: 'Poppins';
-    font-size: 20px;
 }
 
 #restartB {
-    margin-left: 20px;
-    color: rgb(52, 148, 227);
+    margin-top: 10px;
+    color: #4e4e4e;
     font-family: 'Poppins';
     font-size: 20px;
 }
 
 #winnerName {
-    margin: 10px;
-    color: palevioletred;
+    margin-top: 30px;
+    color: #f78f6f;
     font-family: 'Poppins';
-    font-size: 20px;
 }
 
 #parti {
     margin: 30px;
     color: #f78f6f;
     font-family: 'Poppins';
-    font-size: 20px;
 }
 
 #turnP {
     color: #81818b;
-    font-family: 'Poppins';
-    font-size: 20px;
 }
 
 .container {
@@ -79,7 +68,7 @@ p {
 
 .grid-container {
     display: grid;
-    column-gap: 10px;
+    column-gap: 1px;
     grid-template-columns: auto auto auto;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 10px;
@@ -89,6 +78,7 @@ p {
     background-color: rgba(255, 255, 255, 0.8);
     border: 0.3px solid rgba(255, 255, 255, 0.8);
     padding: 20px;
-    font-size: 20px;
+    font-size: 16px;
+    font-family: 'Poppins';
     text-align: center;
 }
