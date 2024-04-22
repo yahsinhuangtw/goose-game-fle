@@ -7,10 +7,8 @@ let gameState = {
 };
 
 const NUMBEROFCELLS = 64;
-let stateV = gameState['State'];
 
-console.log("Here's the Game State: ", stateV);
-
+const questions = ["Comment tu t'appelles ?", "Tu parles français ?", "Où est-ce que tu habites ?"];
 
 function lancer() {
 
@@ -43,14 +41,16 @@ document.getElementById("parti").onclick = function () {
   let diceTotal = document.getElementById("total").value;
   diceTotal = parseInt(diceTotal); //turn strings into numbers
   document.getElementById("total").value = "";
+  let newPosition = 0;
   if (gameState['Turn'] === 'Beagle') {
-    let newPosition = gameState.beaglePosition + diceTotal;
+    newPosition = gameState.beaglePosition + diceTotal;
     gameState.beaglePosition = newPosition;
   } else {
-    let newPosition = gameState.goldiePosition + diceTotal;
+    newPosition = gameState.goldiePosition + diceTotal;
     gameState.goldiePosition = newPosition;
   }
   drawBoard();
+  document.getElementById("blackboardText").innerText = `Question: ${questions[newPosition]}`;
 
   console.log("Tell us the state of the game: ", gameState);
   // Has anyone won? If beaglePosition or goldiePosition is greater than or equal to position 23, beagle or goldie has won; gameState enters gameover state. If not, game continues, gameState enters gameLoop state.
