@@ -50,29 +50,15 @@ document.getElementById("parti").onclick = function () {
     gameState.goldiePosition = newPosition;
   }
   drawBoard();
-  console.log("Tell us the state of the game: ", gameState);
+
   if (newPosition < 63) {
     document.getElementById("blackboardText").innerText = `Question: ${questions[newPosition]}`;
-  }
-  // Has anyone won? If beaglePosition or goldiePosition is greater than or equal to position 23, beagle or goldie has won; gameState enters gameover state. If not, game continues, gameState enters gameLoop state.
-  if (gameState.beaglePosition >= NUMBEROFCELLS - 1) {
-    gameState.Winner = "Beagle";
-    enterGameOver();
-    console.log("Beagle has won. gameState enters gameover state.");
-    return
-  } else if (gameState.goldiePosition >= NUMBEROFCELLS - 1) {
-    gameState.Winner = "Goldie";
-    enterGameOver();
-    console.log("Goldie has won. gameState enters gameover state.")
-    return
   } else {
-    console.log("No one has won. gameState enters gameloop state.")
+    gameState.Winner = gameState.Turn; //handle game over logic
+    enterGameOver();
+    return
   }
-
-
-
   // Whose turn is it? if Turn equals to playerBeagle is True, update Turn to goldie, if Turn equals to playerBeagle is False, update Turn to beagle.
-
   if (gameState.Turn === "Beagle") {
     console.log("Update gameState.Turn to Goldie.");
     gameState.Turn = 'Goldie';
