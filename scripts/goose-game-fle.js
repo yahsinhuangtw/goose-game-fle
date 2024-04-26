@@ -80,7 +80,6 @@ function lancer() {
 
 };
 
-
 document.getElementById("lancerB").onclick = function () {
   let total = lancer();
   console.log("Answer: ", total);
@@ -124,18 +123,16 @@ document.getElementById("parti").onclick = function () {
   }
   // Whose turn is it? if Turn equals to playerBeagle is True, update Turn to goldie, if Turn equals to playerBeagle is False, update Turn to beagle.
   if (gameState.Turn === "Beagle") {
-    console.log("Update gameState.Turn to Goldie.");
     gameState.Turn = 'Goldie';
   } else {
-    console.log("Update gameState.Turn to Beagle.");
     gameState.Turn = 'Beagle';
   }
-  document.getElementById("turnP").innerText = `${gameState.Turn}, it's your turn.`;
+  document.getElementById("turnP").innerText = `${gameState.Turn}, c'est à toi de jouer.`;
 };
 
 function enterGameOver() {
   document.getElementById("winnerName").innerText = `${gameState.Winner} a gagné la partie.`;
-  document.getElementById("blackboardText").innerText = `${gameState.Winner} a gagné la partie.`;
+  document.getElementById("blackboardText").innerText = "Questions: ";
   document.querySelectorAll(".groupA").forEach(function (elem) {
     elem.style.display = "none";
   });
@@ -161,7 +158,7 @@ function restart() {
   gameState.beaglePosition = 0;
   gameState.goldiePosition = 0;
   document.getElementById("total").value = "";
-  document.getElementById("turnP").innerText = `${gameState.Turn}, it's your turn.`;
+  document.getElementById("turnP").innerText = `${gameState.Turn}, c'est à toi de jouer.`;
   document.getElementById("blackboardText").innerText = "Questions: ";
   drawBoard();
   enterGameLoop();
