@@ -82,7 +82,6 @@ function lancer() {
 
 document.getElementById("lancerB").onclick = function () {
   let total = lancer();
-  console.log("Answer: ", total);
   let inputElement = document.getElementById("total");
   inputElement.value = total;
 };
@@ -115,7 +114,7 @@ document.getElementById("parti").onclick = function () {
   drawBoard();
 
   if (newPosition < 63) {
-    document.getElementById("blackboardText").innerText = `Question: ${questions[newPosition]}`;
+    document.getElementById("blackboardText").innerText = `Question : ${questions[newPosition]}`;
   } else {
     gameState.Winner = gameState.Turn; //handle game over logic
     enterGameOver();
@@ -132,7 +131,7 @@ document.getElementById("parti").onclick = function () {
 
 function enterGameOver() {
   document.getElementById("winnerName").innerText = `${gameState.Winner} a gagné la partie.`;
-  document.getElementById("blackboardText").innerText = "Questions: ";
+  document.getElementById("blackboardText").innerText = "Question : ";
   document.querySelectorAll(".groupA").forEach(function (elem) {
     elem.style.display = "none";
   });
@@ -159,7 +158,7 @@ function restart() {
   gameState.goldiePosition = 0;
   document.getElementById("total").value = "";
   document.getElementById("turnP").innerText = `${gameState.Turn}, c'est à toi de jouer.`;
-  document.getElementById("blackboardText").innerText = "Questions: ";
+  document.getElementById("blackboardText").innerText = "Question : ";
   drawBoard();
   enterGameLoop();
 }
