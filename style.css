@@ -16,7 +16,7 @@ p {
 
 #blackboardText {
     color: rgb(227, 234, 239);
-    margin: 30px;
+    padding: 75px 50px 75px;
 }
 
 .table {
