@@ -84,6 +84,8 @@ document.getElementById("lancerB").onclick = function () {
   let total = lancer();
   let inputElement = document.getElementById("total");
   inputElement.value = total;
+  document.getElementById("parti").disabled = false;
+  document.getElementById("lancerB").disabled = true;
 };
 
 function drawBoard() {
@@ -112,7 +114,8 @@ document.getElementById("parti").onclick = function () {
     gameState.goldiePosition = newPosition;
   }
   drawBoard();
-
+  document.getElementById("parti").disabled = true;
+  document.getElementById("lancerB").disabled = false;
   if (newPosition < 63) {
     document.getElementById("blackboardText").innerText = `Question : ${questions[newPosition]}`;
   } else {
@@ -157,6 +160,8 @@ function restart() {
   gameState.beaglePosition = 0;
   gameState.goldiePosition = 0;
   document.getElementById("total").value = "";
+  document.getElementById("lancerB").disabled = false;
+  document.getElementById("parti").disabled = true;
   document.getElementById("turnP").innerText = `${gameState.Turn}, c'est à toi de jouer.`;
   document.getElementById("blackboardText").innerText = "Question : ";
   drawBoard();
