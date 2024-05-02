@@ -16,7 +16,18 @@ p {
 
 #blackboardText {
     color: rgb(227, 234, 239);
-    padding: 75px 50px 75px;
+    padding: 75px 50px 15px;
+}
+
+#responseText {
+    width: 150px;
+    color: #4e4e4e;
+    font-family: 'Poppins'
+}
+
+#envoyer {
+    color: #4e4e4e;
+    font-family: 'Poppins'
 }
 
 .table {
