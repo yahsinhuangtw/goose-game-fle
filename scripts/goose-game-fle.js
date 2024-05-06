@@ -104,7 +104,6 @@ document.getElementById("parti").onclick = function () {
   let diceTotal = document.getElementById("total").value;
   diceTotal = parseInt(diceTotal); //turn strings into numbers
   document.getElementById("total").value = "";
-  let responseTextArray = document.getElementById("responseText").value;
   let newPosition = 0;
   if (gameState['Turn'] === 'Beagle') {
     newPosition = gameState.beaglePosition + diceTotal;
@@ -129,6 +128,13 @@ document.getElementById("parti").onclick = function () {
     gameState.Turn = 'Beagle';
   }
   document.getElementById("turnP").innerText = `${gameState.Turn}, c'est à toi de jouer.`;
+
+  function printResponse(){
+    // Get the value entered with an input field with the ID "responseText"
+    let responseText = document.getElementById("responseText").value;
+    
+    console.log("Voir les réponses: ", responseText);
+  }
 };
 
 function enterGameOver() {
@@ -170,5 +176,4 @@ function switchParti(enableParti){
   document.getElementById("parti").disabled = !enableParti;
   document.getElementById("lancerB").disabled = enableParti;
 }
-
 restart(); // When the page loads, we set up the game.

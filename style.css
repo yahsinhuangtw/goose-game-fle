@@ -30,6 +30,11 @@ p {
     font-family: 'Poppins'
 }
 
+#responsePrint {
+    color: #4e4e4e;
+    font-family: 'Poppins'
+}
+
 .table {
     table-layout: fixed;
     width: 600px;
