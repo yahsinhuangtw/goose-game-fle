@@ -129,17 +129,6 @@ document.getElementById("parti").onclick = function () {
   }
   document.getElementById("turnP").innerText = `${gameState.Turn}, c'est à toi de jouer.`;
 
-  function printResponse(){
-    // Get the value entered with an input field with the ID "responseText"
-    let responseText = document.getElementById("responseText").value;
-
-    console.log("Voir les réponses: ", responseText);
-  }
-  // Attach an event listener to the button to trigger the printResponse function
-  document.getElementById("envoyer").addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent form submission
-    printResponse(); // Call the printResponse function
-  });
 };
 
 function enterGameOver() {
@@ -181,4 +170,19 @@ function switchParti(enableParti) {
   document.getElementById("parti").disabled = !enableParti;
   document.getElementById("lancerB").disabled = enableParti;
 }
-restart(); // When the page loads, we set up the game.
+
+function printResponse() {
+  // Get the value entered with an input field with the ID "responseText"
+  let responseText = document.getElementById("responseText").value;
+  console.log("Voir les réponses: ", responseText);
+}
+// Wait for the DOM to fully load before attaching event listener
+document.addEventListener("DOMContentLoaded", function () {
+  // Attach an event listener to the button to trigger the printResponse function
+  document.getElementById("envoyer").addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent form submission
+    printResponse(); // Call the printResponse function
+  });
+
+  restart(); // When the page loads, we set up the game.
+})
