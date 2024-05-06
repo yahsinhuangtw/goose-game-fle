@@ -104,6 +104,7 @@ document.getElementById("parti").onclick = function () {
   let diceTotal = document.getElementById("total").value;
   diceTotal = parseInt(diceTotal); //turn strings into numbers
   document.getElementById("total").value = "";
+  let responseTextArray = document.getElementById("responseText").value;
   let newPosition = 0;
   if (gameState['Turn'] === 'Beagle') {
     newPosition = gameState.beaglePosition + diceTotal;
