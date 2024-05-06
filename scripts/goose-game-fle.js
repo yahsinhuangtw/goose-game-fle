@@ -132,9 +132,14 @@ document.getElementById("parti").onclick = function () {
   function printResponse(){
     // Get the value entered with an input field with the ID "responseText"
     let responseText = document.getElementById("responseText").value;
-    
+
     console.log("Voir les réponses: ", responseText);
   }
+  // Attach an event listener to the button to trigger the printResponse function
+  document.getElementById("envoyer").addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent form submission
+    printResponse(); // Call the printResponse function
+  });
 };
 
 function enterGameOver() {
@@ -172,7 +177,7 @@ function restart() {
   enterGameLoop();
 }
 
-function switchParti(enableParti){
+function switchParti(enableParti) {
   document.getElementById("parti").disabled = !enableParti;
   document.getElementById("lancerB").disabled = enableParti;
 }
