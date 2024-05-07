@@ -183,5 +183,11 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Response Big Array: ", responseArray);
   });
 
+  document.getElementById("responsePrint").addEventListener("click", function (event){
+    event.preventDefault(); // Prevent form submission
+    console.log(responseArray);
+    document.getElementById("blackboardText").innerText = `Voir les réponses:  ${responseArray.join(', ')}`;
+  });
+
   restart(); // When the page loads, we set up the game.
 })
