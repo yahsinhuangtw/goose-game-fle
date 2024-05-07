@@ -5,7 +5,7 @@ let gameState = {
   goldiePosition: 0,
   'Winner': '___',
 };
-
+const responseArray = [];
 const NUMBEROFCELLS = 64;
 
 const questions = [
@@ -171,17 +171,16 @@ function switchParti(enableParti) {
   document.getElementById("lancerB").disabled = enableParti;
 }
 
-function printResponse() {
-  // Get the value entered with an input field with the ID "responseText"
-  let responseText = document.getElementById("responseText").value;
-  console.log("Voir les réponses: ", responseText);
-}
+
 // Wait for the DOM to fully load before attaching event listener
 document.addEventListener("DOMContentLoaded", function () {
   // Attach an event listener to the button to trigger the printResponse function
   document.getElementById("envoyer").addEventListener("click", function (event) {
     event.preventDefault(); // Prevent form submission
-    printResponse(); // Call the printResponse function
+    let responseText = document.getElementById("responseText").value;
+    responseArray.push(responseText);
+    console.log("Voir les réponses: ", responseText);
+    console.log("Response Big Array: ", responseArray);
   });
 
   restart(); // When the page loads, we set up the game.
