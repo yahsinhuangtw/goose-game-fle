@@ -193,14 +193,18 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("blackboardText").innerText = `Les réponses à vos questions: ${gameState.printQuestions} ${responseArray.join(', ')}`;
   });
 
-  const beagleQ =[2, 5, 6];
-  const goldieQ =[4, 7];
+  const beagleQ =[2, 7, 10, 15];
+  const goldieQ =[4, 9, 13];
+  const beagleR =["Moi, c'est Cédric.", "Ça va.", "Le Livre des Baltimore de Joël Dicker.", "Oui, je prends du café le matin."];
+  const goldieR =["Je m'appelle Louise.", "Oui, je parle un peu français.", "Je conçois et développe des sites web."]
   for(let i = 0; i < beagleQ.length; i++){
     let beagleQNo = beagleQ[i];
     let goldieQNo = goldieQ[i];
     let beagleQText = questions[beagleQNo-1];
     let goldieQText = questions[goldieQNo-1];
-    console.log(beagleQNo, beagleQText, goldieQNo, goldieQText)
+    let beagleRText = beagleR[i];
+    let goldieRText = goldieR[i];
+    console.log(beagleQNo, beagleQText, beagleRText, goldieQNo, goldieQText, goldieRText)
   }
   restart(); // When the page loads, we set up the game.
 })
