@@ -193,5 +193,14 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("blackboardText").innerText = `Les réponses à vos questions: ${gameState.printQuestions} ${responseArray.join(', ')}`;
   });
 
+  const beagleQ =[2, 5, 6];
+  const goldieQ =[4, 7];
+  for(let i = 0; i < beagleQ.length; i++){
+    let beagleQNo = beagleQ[i];
+    let goldieQNo = goldieQ[i];
+    let beagleQText = questions[beagleQNo-1];
+    let goldieQText = questions[goldieQNo-1];
+    console.log(beagleQNo, beagleQText, goldieQNo, goldieQText)
+  }
   restart(); // When the page loads, we set up the game.
 })
