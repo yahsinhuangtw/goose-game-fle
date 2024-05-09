@@ -199,12 +199,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const goldieR =["Je m'appelle Louise.", "Oui, je parle un peu français.", "Je conçois et développe des sites web."]
   for(let i = 0; i < beagleQ.length; i++){
     let beagleQNo = beagleQ[i];
-    let goldieQNo = goldieQ[i];
     let beagleQText = questions[beagleQNo-1];
-    let goldieQText = questions[goldieQNo-1];
     let beagleRText = beagleR[i];
+    console.log(beagleQNo, beagleQText, beagleRText,)
+  }
+  console.log ("Goldie's responeses")
+  for(let i = 0; i < goldieQ.length; i++){
+    let goldieQNo = goldieQ[i];
+    let goldieQText = questions[goldieQNo-1];
     let goldieRText = goldieR[i];
-    console.log(beagleQNo, beagleQText, beagleRText, goldieQNo, goldieQText, goldieRText)
+    console.log(goldieQNo, goldieQText, goldieRText)
   }
   restart(); // When the page loads, we set up the game.
 })
