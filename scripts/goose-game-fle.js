@@ -4,6 +4,7 @@ let gameState = {
   beaglePosition: 0,
   goldiePosition: 0,
   'Winner': '___',
+  printQuestions: 0,
 };
 const responseArray = [];
 const NUMBEROFCELLS = 64;
@@ -121,6 +122,9 @@ document.getElementById("parti").onclick = function () {
     enterGameOver();
     return
   }
+  
+  gameState.printQuestions = questions[newPosition];
+
   // Whose turn is it? if Turn equals to playerBeagle is True, update Turn to goldie, if Turn equals to playerBeagle is False, update Turn to beagle.
   if (gameState.Turn === "Beagle") {
     gameState.Turn = 'Goldie';
@@ -185,8 +189,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.getElementById("responsePrint").addEventListener("click", function (event){
     event.preventDefault(); // Prevent form submission
-    console.log(responseArray);
-    document.getElementById("blackboardText").innerText = `Voir les réponses:  ${responseArray.join(', ')}`;
+    console.log(responseArray, questions)
+    document.getElementById("blackboardText").innerText = `Les réponses à vos questions: ${gameState.printQuestions} ${responseArray.join(', ')}`;
   });
 
   restart(); // When the page loads, we set up the game.
