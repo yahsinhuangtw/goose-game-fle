@@ -5,6 +5,8 @@ let gameState = {
   goldiePosition: 0,
   'Winner': '___',
   printQuestions: 0,
+  beagleQNo: [],
+  goldieQNo: [],
 };
 const responseArray = [];
 const NUMBEROFCELLS = 64;
@@ -122,16 +124,10 @@ document.getElementById("parti").onclick = function () {
     enterGameOver();
     return
   }
-  
+
   gameState.printQuestions = questions[newPosition];
 
-  // Whose turn is it? if Turn equals to playerBeagle is True, update Turn to goldie, if Turn equals to playerBeagle is False, update Turn to beagle.
-  if (gameState.Turn === "Beagle") {
-    gameState.Turn = 'Goldie';
-  } else {
-    gameState.Turn = 'Beagle';
-  }
-  document.getElementById("turnP").innerText = `${gameState.Turn}, c'est à toi de jouer.`;
+
 
 };
 
@@ -183,32 +179,30 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault(); // Prevent form submission
     let responseText = document.getElementById("responseText").value;
     responseArray.push(responseText);
+    if (gameState.Turn === "Beagle") {
+      gameState.beagleQNo.push(gameState.beaglePosition);
+    } else {
+      gameState.goldieQNo.push(gameState.goldiePosition);
+    }
+
+    // Whose turn is it? if Turn equals to playerBeagle is True, update Turn to goldie, if Turn equals to playerBeagle is False, update Turn to beagle.
+    if (gameState.Turn === "Beagle") {
+      gameState.Turn = 'Goldie';
+    } else {
+      gameState.Turn = 'Beagle';
+    }
+    document.getElementById("turnP").innerText = `${gameState.Turn}, c'est à toi de jouer.`;
+
     console.log("Voir les réponses: ", responseText);
     console.log("Response Big Array: ", responseArray);
+    console.log("Beagle's Question Number: ", gameState.beagleQNo);
+    console.log("Goldie's Question Number: ", gameState.goldieQNo);
   });
 
-  document.getElementById("responsePrint").addEventListener("click", function (event){
+  document.getElementById("responsePrint").addEventListener("click", function (event) {
     event.preventDefault(); // Prevent form submission
     console.log(responseArray, questions)
     document.getElementById("blackboardText").innerText = `Les réponses à vos questions: ${gameState.printQuestions} ${responseArray.join(', ')}`;
   });
-
-  const beagleQ =[2, 7, 10, 15];
-  const goldieQ =[4, 9, 13];
-  const beagleR =["Moi, c'est Cédric.", "Ça va.", "Le Livre des Baltimore de Joël Dicker.", "Oui, je prends du café le matin."];
-  const goldieR =["Je m'appelle Louise.", "Oui, je parle un peu français.", "Je conçois et développe des sites web."]
-  for(let i = 0; i < beagleQ.length; i++){
-    let beagleQNo = beagleQ[i];
-    let beagleQText = questions[beagleQNo-1];
-    let beagleRText = beagleR[i];
-    console.log(beagleQNo, beagleQText, beagleRText,)
-  }
-  console.log ("Goldie's responeses")
-  for(let i = 0; i < goldieQ.length; i++){
-    let goldieQNo = goldieQ[i];
-    let goldieQText = questions[goldieQNo-1];
-    let goldieRText = goldieR[i];
-    console.log(goldieQNo, goldieQText, goldieRText)
-  }
   restart(); // When the page loads, we set up the game.
 })
