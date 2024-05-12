@@ -206,9 +206,8 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let i = 0; i < gameState.beagleQNo.length; i++) {
       let beagleGroupString = `${gameState.beagleQNo[i]}_${questions[gameState.beagleQNo[i] - 1]}_${gameState.responseBeagle[i]}`
       beagleGroupResponse.push(beagleGroupString);
-      console.log(`${gameState.beagleQNo[i]}_${questions[gameState.beagleQNo[i] - 1]}_${gameState.responseBeagle[i]}`)
     }
-  console.log(beagleGroupResponse)
+  console.log(beagleGroupResponse.join())
   });
   restart(); // When the page loads, we set up the game.
 })
