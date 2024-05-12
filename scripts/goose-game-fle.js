@@ -200,14 +200,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.getElementById("responsePrint").addEventListener("click", function (event) {
     event.preventDefault(); // Prevent form submission
-    console.log(responseArray, questions)
-    document.getElementById("blackboardText").innerText = `Les réponses à vos questions:  ${gameState.beagleQNo.join(', ')} ${gameState.goldieQNo.join(', ')} ${responseArray.join(', ')}`;
     let beagleGroupResponse = []
     for (let i = 0; i < gameState.beagleQNo.length; i++) {
-      let beagleGroupString = `${gameState.beagleQNo[i]}_${questions[gameState.beagleQNo[i] - 1]}_${gameState.responseBeagle[i]}`
+      let questionNumber = gameState.beagleQNo[i];
+      let questionText = questions[gameState.beagleQNo[i] - 1];
+      let answer = gameState.responseBeagle[i];
+      let beagleGroupString = `${questionNumber}_${questionText}_${answer}`
       beagleGroupResponse.push(beagleGroupString);
     }
-  console.log(beagleGroupResponse.join())
+    console.log(beagleGroupResponse.join())
+    document.getElementById("blackboardText").innerText = `Les réponses à vos questions:  \n${beagleGroupResponse.join("\n")} `;
   });
   restart(); // When the page loads, we set up the game.
 })
