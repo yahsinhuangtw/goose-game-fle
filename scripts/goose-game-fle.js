@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("responsePrint").addEventListener("click", function (event) {
     event.preventDefault(); // Prevent form submission
     console.log(responseArray, questions)
-    document.getElementById("blackboardText").innerText = `Les réponses à vos questions: ${gameState.printQuestions} ${responseArray.join(', ')}`;
+    document.getElementById("blackboardText").innerText = `Les réponses à vos questions: ${gameState.printQuestions} ${gameState.beagleQNo.join(', ')} ${gameState.goldieQNo.join(', ')} ${responseArray.join(', ')}`;
   });
   restart(); // When the page loads, we set up the game.
 })
