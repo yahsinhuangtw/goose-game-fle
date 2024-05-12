@@ -6,6 +6,8 @@ let gameState = {
   'Winner': '___',
   beagleQNo: [],
   goldieQNo: [],
+  responseBeagle: [],
+  responseGoldie: [],
 };
 const responseArray = [];
 const NUMBEROFCELLS = 64;
@@ -176,8 +178,10 @@ document.addEventListener("DOMContentLoaded", function () {
     responseArray.push(responseText);
     if (gameState.Turn === "Beagle") {
       gameState.beagleQNo.push(gameState.beaglePosition);
+      gameState.responseBeagle.push(responseText);
     } else {
       gameState.goldieQNo.push(gameState.goldiePosition);
+      gameState.responseGoldie.push(responseText);
     }
 
     // Whose turn is it? if Turn equals to playerBeagle is True, update Turn to goldie, if Turn equals to playerBeagle is False, update Turn to beagle.
@@ -198,6 +202,13 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault(); // Prevent form submission
     console.log(responseArray, questions)
     document.getElementById("blackboardText").innerText = `Les réponses à vos questions:  ${gameState.beagleQNo.join(', ')} ${gameState.goldieQNo.join(', ')} ${responseArray.join(', ')}`;
+    let beagleGroupResponse = []
+    for (let i = 0; i < gameState.beagleQNo.length; i++) {
+      let beagleGroupString = `${gameState.beagleQNo[i]}_${questions[gameState.beagleQNo[i] - 1]}_${gameState.responseBeagle[i]}`
+      beagleGroupResponse.push(beagleGroupString);
+      console.log(`${gameState.beagleQNo[i]}_${questions[gameState.beagleQNo[i] - 1]}_${gameState.responseBeagle[i]}`)
+    }
+  console.log(beagleGroupResponse)
   });
   restart(); // When the page loads, we set up the game.
 })
