@@ -9,9 +9,7 @@ let gameState = {
   responseBeagle: [],
   responseGoldie: [],
 };
-const responseArray = [];
 const NUMBEROFCELLS = 64;
-
 const questions = [
   "Comment tu t'appelles?",
   "Quel est ton prénom?",
@@ -175,7 +173,6 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("envoyer").addEventListener("click", function (event) {
     event.preventDefault(); // Prevent form submission
     let responseText = document.getElementById("responseText").value;
-    responseArray.push(responseText);
     if (gameState.Turn === "Beagle") {
       gameState.beagleQNo.push(gameState.beaglePosition);
       gameState.responseBeagle.push(responseText);
@@ -193,7 +190,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("turnP").innerText = `${gameState.Turn}, c'est à toi de jouer.`;
 
     console.log("Voir les réponses: ", responseText);
-    console.log("Response Big Array: ", responseArray);
     console.log("Beagle's Question Number: ", gameState.beagleQNo);
     console.log("Goldie's Question Number: ", gameState.goldieQNo);
   });
