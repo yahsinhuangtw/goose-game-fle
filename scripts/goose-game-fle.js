@@ -201,11 +201,22 @@ document.addEventListener("DOMContentLoaded", function () {
       let questionNumber = gameState.beagleQNo[i];
       let questionText = questions[gameState.beagleQNo[i] - 1];
       let answer = gameState.responseBeagle[i];
-      let beagleGroupString = `${questionNumber}_${questionText}_${answer}`
+      let beagleGroupString = `${questionNumber}. ${questionText} ${answer}`
       beagleGroupResponse.push(beagleGroupString);
     }
     console.log(beagleGroupResponse.join())
-    document.getElementById("blackboardText").innerText = `Les réponses à vos questions:  \n${beagleGroupResponse.join("\n")} `;
+
+    let goldieGroupResponse = []
+    for (let i = 0; i < gameState.goldieQNo.length; i++) {
+      let questionNumber = gameState.goldieQNo[i];
+      let questionText = questions[gameState.goldieQNo[i] - 1];
+      let answer = gameState.responseGoldie[i];
+      let goldieGroupString = `${questionNumber}. ${questionText} ${answer}`
+      goldieGroupResponse.push(goldieGroupString);
+    }
+    console.log(goldieGroupResponse.join())
+
+    document.getElementById("blackboardText").innerText = `Les réponses à vos questions, \nBeagle:  \n${beagleGroupResponse.join("\n")} \nGoldie: \n${goldieGroupResponse.join("\n")} `;
   });
   restart(); // When the page loads, we set up the game.
 })
