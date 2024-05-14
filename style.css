@@ -9,13 +9,12 @@ p {
 #blackboard {
     height: 280px;
     width: 560px;
-    background-color: #81818be4;
     margin-left: 40px;
     border-radius: 35px;
 }
 
 #blackboardText {
-    color: rgb(227, 234, 239);
+    color: #4e4e4e;
     padding: 75px 50px 15px;
 }
 
