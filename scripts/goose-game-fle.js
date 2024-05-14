@@ -173,6 +173,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("envoyer").addEventListener("click", function (event) {
     event.preventDefault(); // Prevent form submission
     let responseText = document.getElementById("responseText").value;
+    document.getElementById("responseText").value = "";
     if (gameState.Turn === "Beagle") {
       gameState.beagleQNo.push(gameState.beaglePosition);
       gameState.responseBeagle.push(responseText);
