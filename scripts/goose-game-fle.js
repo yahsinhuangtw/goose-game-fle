@@ -82,12 +82,12 @@ function lancer() {
 
 };
 
-document.getElementById("lancerB").onclick = function () {
-  let total = lancer();
-  let inputElement = document.getElementById("total");
-  inputElement.value = total;
-  switchParti(true);
-};
+  document.getElementById("lancerB").onclick = function () {
+    let total = lancer();
+    let inputElement = document.getElementById("total");
+    inputElement.value = total;
+    switchParti(true);
+  };
 
 function drawBoard() {
   for (let i = 0; i < NUMBEROFCELLS; i++) {
@@ -117,7 +117,7 @@ document.getElementById("parti").onclick = function () {
   drawBoard();
   switchParti(false);
   if (newPosition < 63) {
-    document.getElementById("blackboardText").innerText = `Question : ${questions[newPosition -1]}`;
+    document.getElementById("blackboardText").innerText = `Question : ${questions[newPosition - 1]}`;
   } else {
     gameState.Winner = gameState.Turn; //handle game over logic
     enterGameOver();
@@ -166,7 +166,6 @@ function switchParti(enableParti) {
   document.getElementById("lancerB").disabled = enableParti;
 }
 
-
 // Wait for the DOM to fully load before attaching event listener
 document.addEventListener("DOMContentLoaded", function () {
   // Attach an event listener to the button to trigger the printResponse function
@@ -189,18 +188,21 @@ document.addEventListener("DOMContentLoaded", function () {
       gameState.Turn = 'Beagle';
     }
     document.getElementById("turnP").innerText = `${gameState.Turn}, c'est à toi de jouer.`;
-
-    console.log("Voir les réponses: ", responseText);
+    switchEnvoyer(false);
     console.log("Beagle's Question Number: ", gameState.beagleQNo);
     console.log("Goldie's Question Number: ", gameState.goldieQNo);
   });
+
+  function switchEnvoyer(enableEnvoyer) {
+    document.getElementById("envoyer").disabled = !enableEnvoyer;
+  }
 
   document.getElementById("responsePrint").addEventListener("click", function (event) {
     event.preventDefault(); // Prevent form submission
     let beagleGroupResponse = []
     for (let i = 0; i < gameState.beagleQNo.length; i++) {
       let questionNumber = gameState.beagleQNo[i];
-      let questionText = questions[gameState.beagleQNo[i] -1];
+      let questionText = questions[gameState.beagleQNo[i] - 1];
       let answer = gameState.responseBeagle[i];
       let beagleGroupString = `${questionNumber}. ${questionText} ${answer}`
       beagleGroupResponse.push(beagleGroupString);
@@ -210,7 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let goldieGroupResponse = []
     for (let i = 0; i < gameState.goldieQNo.length; i++) {
       let questionNumber = gameState.goldieQNo[i];
-      let questionText = questions[gameState.goldieQNo[i] -1];
+      let questionText = questions[gameState.goldieQNo[i] - 1];
       let answer = gameState.responseGoldie[i];
       let goldieGroupString = `${questionNumber}. ${questionText} ${answer}`
       goldieGroupResponse.push(goldieGroupString);
