@@ -87,6 +87,7 @@ document.getElementById("lancerB").onclick = function () {
   let inputElement = document.getElementById("total");
   inputElement.value = total;
   switchParti(true);
+  switchLancer(false);
 };
 
 function drawBoard() {
@@ -164,11 +165,14 @@ function restart() {
 
 function switchParti(enableParti) {
   document.getElementById("parti").disabled = !enableParti;
-  document.getElementById("lancerB").disabled = enableParti;
+
 }
 function switchEnvoyer(enableEnvoyer) {
   document.getElementById("envoyer").disabled = !enableEnvoyer;
   document.getElementById("responseText").disabled = !enableEnvoyer;
+}
+function switchLancer(enableLancer) {
+  document.getElementById("lancerB").disabled = !enableLancer;
 }
 // Wait for the DOM to fully load before attaching event listener
 document.addEventListener("DOMContentLoaded", function () {
@@ -193,6 +197,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     document.getElementById("turnP").innerText = `${gameState.Turn}, c'est à toi de jouer.`;
     switchEnvoyer(false);
+    switchLancer(true);
     console.log("Beagle's Question Number: ", gameState.beagleQNo);
     console.log("Goldie's Question Number: ", gameState.goldieQNo);
   });
