@@ -82,12 +82,12 @@ function lancer() {
 
 };
 
-  document.getElementById("lancerB").onclick = function () {
-    let total = lancer();
-    let inputElement = document.getElementById("total");
-    inputElement.value = total;
-    switchParti(true);
-  };
+document.getElementById("lancerB").onclick = function () {
+  let total = lancer();
+  let inputElement = document.getElementById("total");
+  inputElement.value = total;
+  switchParti(true);
+};
 
 function drawBoard() {
   for (let i = 0; i < NUMBEROFCELLS; i++) {
@@ -116,6 +116,7 @@ document.getElementById("parti").onclick = function () {
   }
   drawBoard();
   switchParti(false);
+  switchEnvoyer(true);
   if (newPosition < 63) {
     document.getElementById("blackboardText").innerText = `Question : ${questions[newPosition - 1]}`;
   } else {
@@ -165,7 +166,10 @@ function switchParti(enableParti) {
   document.getElementById("parti").disabled = !enableParti;
   document.getElementById("lancerB").disabled = enableParti;
 }
-
+function switchEnvoyer(enableEnvoyer) {
+  document.getElementById("envoyer").disabled = !enableEnvoyer;
+  document.getElementById("responseText").disabled = !enableEnvoyer;
+}
 // Wait for the DOM to fully load before attaching event listener
 document.addEventListener("DOMContentLoaded", function () {
   // Attach an event listener to the button to trigger the printResponse function
@@ -192,10 +196,6 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Beagle's Question Number: ", gameState.beagleQNo);
     console.log("Goldie's Question Number: ", gameState.goldieQNo);
   });
-
-  function switchEnvoyer(enableEnvoyer) {
-    document.getElementById("envoyer").disabled = !enableEnvoyer;
-  }
 
   document.getElementById("responsePrint").addEventListener("click", function (event) {
     event.preventDefault(); // Prevent form submission
