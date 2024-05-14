@@ -155,6 +155,10 @@ document.getElementById("restartB").onclick = function () {
 function restart() {
   gameState.beaglePosition = 0;
   gameState.goldiePosition = 0;
+  gameState.beagleQNo = [];
+  gameState.goldieQNo = [];
+  gameState.responseBeagle = [];
+  gameState.responseGoldie = [];
   document.getElementById("total").value = "";
   switchParti(false);
   document.getElementById("turnP").innerText = `${gameState.Turn}, c'est à toi de jouer.`;
